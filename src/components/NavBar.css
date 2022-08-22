@@ -1,0 +1,48 @@
+
+.boton{
+    font-size: 18px;
+}
+
+.boton2{
+    font-size: 18px;
+}
+
+
+.boton:hover{
+    background-color: #b8b8b8;
+
+}
+
+
+.cohete{
+    background-color: white;
+    padding: 2px;
+    margin: 5px;
+    width: 30px;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .cohete:hover {
+      animation: cohete-logo-spin infinite 1s linear;
+    }
+  }
+  
+  @keyframes cohete-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (max-width: 600px){
+    .boton{
+      font-size: 16px;
+    }
+
+    .boton2{
+      font-size: 16px;
+  }
+  }
