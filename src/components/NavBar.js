@@ -1,6 +1,8 @@
 import React from 'react'
 import './NavBar.css'
 import cohete from './cohete.png'
+import CartWidgets from './CartWidgets'
+
 
 const NavBar = (props) => {
   return (
@@ -26,7 +28,7 @@ const NavBar = (props) => {
         <a className="nav-link boton2 btn btn-light text-end mx-1" href="/">Electronica</a>
         <a className="nav-link boton2 btn btn-light text-end mx-1" href="/">Deportes</a>
         <a className="nav-link boton2 btn btn-light text-end mx-1" href="/">Indumentaria</a>
-
+        <CartWidgets/>
       </div>
 
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import logo from './logo.svg';
 import './App.css';
+import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 
 
@@ -13,7 +13,15 @@ function App() {
       </div>
 
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+
+      <div>
+      <ItemListContainer
+      saludo = 'Greeting'
+       />
+      </div>
+
+
+
         <p>
           Bienvenido a la tienda virtual
         </p>
@@ -21,14 +29,7 @@ function App() {
           Que tu experiencia sea placentera!
         </p>
         <p><b>Ulman Juan Manuel</b></p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
       </header>
 
     </div>
