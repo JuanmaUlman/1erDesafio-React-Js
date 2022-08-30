@@ -6,6 +6,9 @@ import NavBar from "./components/NavBar";
 
 
 function App() {
+
+
+
   return (
 
     <div className="App container-fluid">
@@ -23,6 +26,7 @@ function App() {
 
 
       <hr />
+
 
 
         <p>

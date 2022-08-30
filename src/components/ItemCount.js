@@ -1,34 +1,34 @@
-import React, { useEffect, useState } from "react";
-
-const CounterApp = () =>{
-
-const [counter, setCounter] = useState(0);
-
-const handlerCounterDown = () => {
-    if(counter < 1){
-        counter = 0
-    }else{
-        setCounter(counter - 1)
-    }
-    
-    
-}
-
-const handlerCounterUp = () => { 
-    let stock = 10
-    if(counter < 10)
-    setCounter(counter + 1)
-    
-}
+import React, {useState } from "react";
 
 
-    return(
+
+const CounterApp = ({ stock, initial, onAdd}) =>{
+
+    const [number, setNumber] = useState(initial)
+
+
+    const addProduct = (num) =>{
+        setNumber(number + num)
+    };
+
+
+return(
+    <div>
         <>
-        <h2>Contador <b>{counter}</b></h2>
-        <button onClick={handlerCounterUp} className="btn btn-primary mx-1 px-3">Aumentar +</button>
-        <button onClick={handlerCounterDown} className="btn btn-danger px-4">Disminuir-</button>
+        <h3>Contador de productos</h3>
         </>
-    )
+        <div className="my-4">
+            <button onClick={() =>addProduct(-1)} disabled={number === initial} className="btn btn-danger px-3">Disminuir -</button>
+            
+            <span className="m-3 text-center">{number}</span>
+            
+            <button onClick={() => addProduct(+1)} disabled={number === stock} className="btn btn-success px-3">Aumentar +</button>
+        </div>
+
+        <button onClick={() => onAdd(number)} disabled={stock === 0 ? true : null} className="btn btn-light px-5">Añadir</button>
+
+    </div>
+)
 }
 
 export default CounterApp;
