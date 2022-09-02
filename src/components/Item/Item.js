@@ -4,37 +4,48 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import './Item.css'
+import ItemCount from '../Count/ItemCount'
 
-export default function MultiActionAreaCard({item}) {
+ const MultiActionAreaCard = ({img, title, description, price}) => {
+ const onAdd = (number) =>{
+        alert(`Agregaste ${number} productos`)
+      }
+
+
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+    <Card className='card' >
+      <CardActionArea className='cardContent' >
         <CardMedia
           component="img"
-          height="140"
-          image={item.img}
+
+          image={img}
           alt=""
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {item.title}
+            {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {item.description}
+            {description}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {item.description}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {item.price}
+          <Typography variant="h5" className='precio'>
+           ${price}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          
+          <ItemCount 
+            onAdd={onAdd}
+            initial={1}
+            stock={10}/>
         </Button>
       </CardActions>
     </Card>
   );
 }
+
+
+export default MultiActionAreaCard 

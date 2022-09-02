@@ -6,18 +6,20 @@ import {products} from '../Mock/products'
 
 const ItemListContainer = (props) =>{
 
-    const onAdd = (number) =>{
+ const onAdd = (number) =>{
         alert(`Agregaste ${number} productos`)
       }
     
+
+
     const [productsList, setProductsList] = useState([]);
 
 
-    const getProducts = () =>{
-        new Promise((resolve, reject) =>{
-            setTimeout(() => resolve(products), 2000)
-        })
-    }
+const getProducts = () => 
+    new Promise((resolve, reject) =>{
+        setTimeout(() => resolve(products), 2000)
+    })
+
     
 useEffect(() => {
     getProducts()
@@ -30,11 +32,7 @@ useEffect(() => {
     return(
     <>
         <h2>{props.saludo}</h2>
-        <ItemCount
-            onAdd={onAdd}
-            initial={1}
-            stock={10}
-        />
+
         <ItemList productsList={productsList}/>
     </>
     )

@@ -25,10 +25,11 @@ const NavBar = (props) => {
     <div className="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup" >
       <div className="navbar-nav">
         <a className="nav-link boton2 btn btn-light text-end mx-1" aria-current="page" href="/">Home</a>
-        <a className="nav-link boton2 btn btn-light text-end mx-1" href="/">Electronica</a>
-        <a className="nav-link boton2 btn btn-light text-end mx-1" href="/">Deportes</a>
-        <a className="nav-link boton2 btn btn-light text-end mx-1" href="/">Indumentaria</a>
-        <a className="nav-link boton2 btn btn-light text-end active  mx-1" href="/">Juegos Digitales</a>
+        <a className="nav-link boton2 btn btn-light text-end mx-1" href="/">PC</a>
+        <a className="nav-link boton2 btn btn-light text-end mx-1" href="/">Xbox One</a>
+        <a className="nav-link boton2 btn btn-light text-end mx-1" href="/">PS3</a>
+        <a className="nav-link boton2 btn btn-light text-end active mx-1" href="/">PS4</a>
+        <a className="nav-link boton2 btn btn-light text-end mx-1" href="/">Ps5</a>
         <CartWidgets/>
       </div>
 

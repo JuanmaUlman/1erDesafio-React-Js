@@ -1,0 +1,26 @@
+.card{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 20px;
+    text-align: 'center'
+}
+ 
+.cardContent{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    max-width: 345px;
+    margin: 10;
+    text-align: 'center'
+}
+
+.precio{
+
+    color: orangered;
+
+}

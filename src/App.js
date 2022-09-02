@@ -21,7 +21,7 @@ function App() {
 
       <div>
       <ItemListContainer
-      saludo = 'Greeting'
+      saludo = 'Bienvenido a American Games'
        />
       </div>
 

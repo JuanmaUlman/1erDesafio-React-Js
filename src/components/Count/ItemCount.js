@@ -14,18 +14,16 @@ const CounterApp = ({ stock, initial, onAdd}) =>{
 
 return(
     <div>
-        <>
-        <h3>Contador de productos</h3>
-        </>
-        <div className="my-4">
-            <button onClick={() =>addProduct(-1)} disabled={number === initial} className="btn btn-danger px-3">Disminuir -</button>
+
+        <div className="my-4 ">
+            <button onClick={() =>addProduct(-1)} disabled={number === initial} className="btn btn-primary px-3">-</button>
             
-            <span className="m-3 text-center">{number}</span>
+            <span className="m-3 text-center text-black h5 p-2">{number}</span>
             
-            <button onClick={() => addProduct(+1)} disabled={number === stock} className="btn btn-success px-3">Aumentar +</button>
+            <button onClick={() => addProduct(+1)} disabled={number === stock} className="btn btn-primary px-3 ">+</button>
         </div>
 
-        <button onClick={() => onAdd(number)} disabled={stock === 0 ? true : null} className="btn btn-light px-5">Añadir</button>
+        <button onClick={() => onAdd(number)} disabled={stock === 0 ? true : null} className="btn btn-warning px-5">Añadir</button>
 
     </div>
 )
