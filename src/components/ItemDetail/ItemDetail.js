@@ -1,72 +1,75 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { products } from "../Mock/products";
+import React from "react";
 import "./ItemDetail.css";
 
-const ItemDetail = () => {
-  const [games, setGames] = useState([]);
+const ItemDetail = ({title, pictureURL, description, Voices, Texts, size, RequiredInConsole, installation, price}) => {
 
-  const detailItem = () => new Promise((resolve, reject) => {
-     resolve(products);
-    });
-
-  let { id } = useParams();
-
-  useEffect(() => {
-    detailItem().then((products) => setGames(products));
-  }, [id]);
-
-  return (
-    <div>
-      {games.map((game) => {
         return (
-          <div key={game.id} className="detailContainer">
+          <div className="detailContainer">
             <div>
               <img
-                src={game.pictureURL}
-                alt="DBZ"
+                src={pictureURL}
+                alt=""
                 className="imageContainer"
               />
             </div>
 
             <div className="infoContainer">
               <h2>
-                <b>{game.title}</b>
+                <b>{title}</b>
               </h2>
 
               <p>
-                {game.description}
+                {description}
               </p>
               <p>
-                Voces: <b>{game.Voices}</b>
+                Voces: <b>{Voices}</b>
               </p>
               <p>
-                Textos: <b>{game.Texts}</b>
+                Textos: <b>{Texts}</b>
               </p>
               <p>
-                Tamaño: <b>{game.size}</b>
+                Tamaño: <b>{size}</b>
               </p>
               <p>
-                Espacio requerido en consola:{" "}
-                <b>{game.RequiredInConsole}</b>{" "}
+                Espacio requerido en consola: <b>{RequiredInConsole}</b>
               </p>
               <p>
-                Instalacion: <b>{game.installation}</b>{" "}
+                Instalacion: <b>{installation}</b>
               </p>
               <p className="precioDetail1">
-                Precio: <b className="precioDetail2">${game.price}</b>{" "}
+                Precio: <b className="precioDetail2">${price}</b>
               </p>
             </div>
           </div>
         );
-      })}
-    </div>
+      }
+
 
     //     <div >
     // <h2 className='detalles'>Detalles del juego</h2>
 
     // </div>
-  );
-};
-
+ 
 export default ItemDetail;
+
+
+
+
+
+// const ItemDetail = () => {
+//   const [games, setGames] = useState([]);
+
+// const detailItem = () => new Promise((resolve, reject) => {
+//     resolve(products.find(p => p.id === id));
+//   });
+
+//   let { id } = useParams();
+
+//   useEffect(() => {
+//     detailItem().then((products) => setGames(products));
+//   }, [id]);
+// const { id } = useParams();
+// useEffect(() => {
+//     detailItem().then(setGames);
+//   }, [id]);
+// const [game, setGame] = useState([]);

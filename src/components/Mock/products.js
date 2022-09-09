@@ -9,7 +9,8 @@ export const products = [
     Texts: "Español",
     size: "78.3 GB",
     RequiredInConsole : "156.6 GB",
-    installation : "1 Consola"
+    installation : "1 Consola",
+    category: "ps4"
 },
 {
     id: 2,
@@ -21,7 +22,8 @@ export const products = [
     Texts: "Ingles",
     size: "43.3 GB",
     RequiredInConsole : "84.6 GB",
-    installation : "1 Consola" 
+    installation : "1 Consola",
+    category: "ps4" 
 },
 {
 id: 3,
@@ -33,7 +35,8 @@ id: 3,
     Texts: "Español",
     size: "34.31 GB",
     RequiredInConsole : "68.62 GB",
-    installation : "1 Consola"
+    installation : "1 Consola",
+    category: "ps4"
 },
 {
     id: 4,
@@ -45,7 +48,8 @@ id: 3,
     Texts: "Español",
     size: "7.6 GB",
     RequiredInConsole : "15.2 GB",
-    installation : "1 Consola"
+    installation : "1 Consola",
+    category: "ps4"
 },
 {
     id: 5,
@@ -57,7 +61,8 @@ id: 3,
     Texts: "Español",
     size: "47 GB",
     RequiredInConsole : "94 GB" ,
-    installation : "1 Consola"
+    installation : "1 Consola",
+    category: "ps4"
 },
 {
     id: 6,
@@ -69,7 +74,8 @@ id: 3,
     Texts: "Español",
     size: "41.8 GB",
     RequiredInConsole : "83.6 GB" ,
-    installation : "1 Consola"
+    installation : "1 Consola",
+    category: "ps4"
 },
 {
     id: 7,
@@ -81,7 +87,8 @@ id: 3,
     Texts: "Español",
     size: "89.2 GB",
     RequiredInConsole : "178.4 GB",
-    installation: "1 Consola" 
+    installation: "1 Consola",
+    category: "ps4" 
 },
 {
     id: 8,
@@ -93,7 +100,8 @@ id: 3,
     Texts: "Español",
     size: "80 GB",
     RequiredInConsole : "160 GB",
-    installation : "1 Consola"
+    installation : "1 Consola",
+    category: "ps4"
 },
 {
     id: 9,
@@ -105,7 +113,8 @@ id: 3,
     Texts: "Español",
     size: "37.6 GB",
     RequiredInConsole : "75.2 GB",
-    installation : "1 Consola"
+    installation : "1 Consola",
+    category: "ps4"
 },
 {
     id: 10,
@@ -117,17 +126,31 @@ id: 3,
     Texts: "Español",
     size: "44 GB",
     RequiredInConsole : "88 GB",
-    installation : "1 Consola"
+    installation : "1 Consola",
+    category: "ps4"
 }
 ]
 
 
 
+export const getProductsByCategory = (categoryId) =>{
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            resolve(products.filter(game => game.category === categoryId))
+        },1000)
+    })
+}
+
+
 
 export const getproductsById = (id) => {
     return new Promise((resolve, reject) => {
-        return(
+        setTimeout(() =>{
             resolve(products.find(game => game.id === id))
-        )       
+        }, 1000)
     })}
+
+
+
+
 

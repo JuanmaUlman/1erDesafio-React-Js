@@ -1,41 +1,29 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { products} from '../Mock/products'
+import { getproductsById} from '../Mock/products'
+
 
 
 
 const ItemDetailContainer = () => {
+  const [games, setGames] = useState();
+  const { id } = useParams();
 
-    const [productsDetail, setProductsDetails] = useState([])
+  useEffect(() => {
+    getproductsById(id)
+      .then(game => setGames(game))
+  }, [id])
 
 
 
-    const getItem = () => new Promise ((resolve, reject) =>{
-        setTimeout(() => resolve(products), 2000)
-    })
 
-
-    useEffect(() => {
-        getItem()
-            .then(products => setProductsDetails(products))
-    }, [])
-
-    console.log(productsDetail);
+console.log(games)
 
   return (
     <div>
-      {productsDetail.map((game) => {
-        return(
-          <Link to={`/item/${game.id}`}>
-          <ItemDetail key={game.id}/>
-          </Link>
-        )
-      })}
-
-
-
+          <ItemDetail {...games} />
     </div>
   )
   

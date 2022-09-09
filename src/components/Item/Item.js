@@ -6,8 +6,9 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import './Item.css'
 import ItemCount from '../Count/ItemCount'
+import { Link } from 'react-router-dom'
 
- const MultiActionAreaCard = ({img, title, description, price}) => {
+ const MultiActionAreaCard = ({img, title, description, price, id}) => {
  const onAdd = (number) =>{
         alert(`Agregaste ${number} productos`)
       }
@@ -36,6 +37,13 @@ import ItemCount from '../Count/ItemCount'
         </CardContent>
       </CardActionArea>
       <CardActions>
+
+        <Link to={`/item/${id}`}>
+        <Button size="small" color="primary">
+          Detalles
+        </Button>
+        </Link>
+
         <Button size="small" color="primary">
           <ItemCount 
             onAdd={onAdd}
