@@ -124,3 +124,10 @@ id: 3,
 
 
 
+export const getproductsById = (id) => {
+    return new Promise((resolve, reject) => {
+        return(
+            resolve(products.find(game => game.id === id))
+        )       
+    })}
+
