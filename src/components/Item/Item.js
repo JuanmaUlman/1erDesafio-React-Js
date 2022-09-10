@@ -13,8 +13,6 @@ import { Link } from 'react-router-dom'
         alert(`Agregaste ${number} productos`)
       }
 
-
-
   return (
     <Card className='card' >
       <CardActionArea className='cardContent' >
@@ -34,15 +32,15 @@ import { Link } from 'react-router-dom'
           <Typography variant="h5" className='precio'>
            ${price}
           </Typography>
+          <Link to={`/item/${id}`}>
+
+          <Button variant="contained" style={{marginTop: '10px'}}>DETALLES</Button>
+        </Link>
         </CardContent>
       </CardActionArea>
       <CardActions>
 
-        <Link to={`/item/${id}`}>
-        <Button size="small" color="primary">
-          Detalles
-        </Button>
-        </Link>
+
 
         <Button size="small" color="primary">
           <ItemCount 

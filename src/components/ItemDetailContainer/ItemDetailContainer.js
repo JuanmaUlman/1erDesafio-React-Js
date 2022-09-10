@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
+import React, { useState, useEffect  } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { getproductsById} from '../Mock/products'
@@ -8,17 +7,15 @@ import { getproductsById} from '../Mock/products'
 
 
 const ItemDetailContainer = () => {
-  const [games, setGames] = useState();
+  const [games, setGames] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
     getproductsById(id)
-      .then(game => setGames(game))
+      .then(game =>  setGames(game))
   }, [id])
 
-
-
-
+console.log(id);
 console.log(games)
 
   return (
