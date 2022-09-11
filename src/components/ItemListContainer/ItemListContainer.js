@@ -27,13 +27,16 @@ useEffect(() => {
 
     if(!categoryId){
         getProducts()
-    .then(products => setProductsList(products))
-    .catch(error => console.error(error))
-    setLoading(false)
-    }else{
+    .then(products => {setProductsList(products)
+    setLoading(false)})
+    .catch(error => console.error(error)
+
+    )}else{
         getProductsByCategory(categoryId)
-            .then(products => setProductsList(products))
-        setLoading(false)
+            .then(products => {setProductsList(products)
+            setLoading(false)}
+            )
+        
     }
 
 }, [categoryId])

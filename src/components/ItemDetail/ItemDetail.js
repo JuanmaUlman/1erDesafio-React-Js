@@ -1,7 +1,12 @@
 import React from "react";
 import "./ItemDetail.css";
+import ItemCount from '../Count/ItemCount'
 
 const ItemDetail = ({title, pictureURL, description, Voices, Texts, size, RequiredInConsole, installation, price}) => {
+
+  const onAdd = (number) =>{
+    alert(`Agregaste ${number} productos`)
+    }
 
         return (
           <div className="detailContainer">
@@ -39,37 +44,18 @@ const ItemDetail = ({title, pictureURL, description, Voices, Texts, size, Requir
               <p className="precioDetail1">
                 Precio: <b className="precioDetail2">${price}</b>
               </p>
+
+              <ItemCount 
+            onAdd={onAdd}
+            initial={1}
+            stock={10}/>
             </div>
           </div>
         );
       }
 
 
-    //     <div >
-    // <h2 className='detalles'>Detalles del juego</h2>
-
-    // </div>
- 
 export default ItemDetail;
 
 
 
-
-
-// const ItemDetail = () => {
-//   const [games, setGames] = useState([]);
-
-// const detailItem = () => new Promise((resolve, reject) => {
-//     resolve(products.find(p => p.id === id));
-//   });
-
-//   let { id } = useParams();
-
-//   useEffect(() => {
-//     detailItem().then((products) => setGames(products));
-//   }, [id]);
-// const { id } = useParams();
-// useEffect(() => {
-//     detailItem().then(setGames);
-//   }, [id]);
-// const [game, setGame] = useState([]);

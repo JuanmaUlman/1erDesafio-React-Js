@@ -32,10 +32,11 @@ import { Link } from 'react-router-dom'
           <Typography variant="h5" className='precio'>
            ${price}
           </Typography>
+          
           <Link to={`/item/${id}`}>
+            <Button variant="contained" style={{marginTop: '10px'}}>DETALLES</Button>
+          </Link>
 
-          <Button variant="contained" style={{marginTop: '10px'}}>DETALLES</Button>
-        </Link>
         </CardContent>
       </CardActionArea>
       <CardActions>
