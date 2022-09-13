@@ -1,9 +1,10 @@
 import React from "react";
 import Item from "../Item/Item";
 
+
 const ItemList = ({ productsList }) => {
   return (
-    <div>
+    <div className="Item-container">
       {productsList.map((item) => {
         return (
           <Item

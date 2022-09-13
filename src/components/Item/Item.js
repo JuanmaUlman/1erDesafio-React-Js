@@ -5,13 +5,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import './Item.css'
-import ItemCount from '../Count/ItemCount'
+// import ItemCount from '../Count/ItemCount'
 import { Link } from 'react-router-dom'
 
  const MultiActionAreaCard = ({img, title, description, price, id}) => {
- const onAdd = (number) =>{
-        alert(`Agregaste ${number} productos`)
-      }
+//  const onAdd = (number) =>{
+//         alert(`Agregaste ${number} productos`)
+//       }
 
   return (
     <Card className='card' >
@@ -43,12 +43,12 @@ import { Link } from 'react-router-dom'
 
 
 
-        <Button size="small" color="primary">
+        {/* <Button size="small" color="primary">
           <ItemCount 
             onAdd={onAdd}
             initial={1}
             stock={10}/>
-        </Button>
+        </Button> */}
       </CardActions>
     </Card>
   );
