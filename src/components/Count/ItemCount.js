@@ -2,7 +2,7 @@ import React, {useState } from "react";
 
 
 
-const CounterApp = ({ stock, initial, onAdd}) =>{
+const CounterApp = ({ item, stock, initial, addItem, quantity}) =>{
 
     const [number, setNumber] = useState(initial)
 
@@ -23,7 +23,7 @@ return(
             <button onClick={() => addProduct(+1)} disabled={number === stock} className="btn btn-primary px-3 ">+</button>
         </div>
 
-        <button onClick={() => onAdd(number)} disabled={stock === 0 ? true : null} className="btn btn-warning px-5">Añadir</button>
+        <button onClick={() => addItem({item, quantity})} disabled={stock === 0 ? true : null} className="btn btn-warning px-5">Añadir</button>
 
     </div>
 )

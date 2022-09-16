@@ -7,10 +7,13 @@ import Cart from "./components/Cart/Cart";
 
 //react-router-dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { CartContext, CartProvider } from "./components/Context/CartContext";
 
 const App = () => {
   return (
     <Router>
+      <CartProvider>
+
       <div className="App container-fluid">
         <div className="row">
           <NavBar />
@@ -23,6 +26,8 @@ const App = () => {
           <Route path="/cart" element={<Cart />}/>
         </Routes>
       </div>
+        
+      </CartProvider>
     </Router>
   );
 };
