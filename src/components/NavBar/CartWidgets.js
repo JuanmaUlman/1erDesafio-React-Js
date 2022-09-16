@@ -19,11 +19,11 @@ items.map((item) => {
   return (
 <Button 
     variant="outlined" 
-    endIcon={<ShoppingCartIcon 
+    startIcon={<ShoppingCartIcon 
     />}
     
 >
-  {itemsInCart}
+{itemsInCart}
 </Button>
 
   )

@@ -7,11 +7,7 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
 
-  const [items, setItems] = useState([{
-    id: 1,
-    title: 'primer producto',
-    quantity: 5
-  }]);
+  const [items, setItems] = useState([]);
 
 
 
@@ -23,9 +19,15 @@ export const CartProvider = ({ children }) => {
   const addItem = (item, quantity) => {
     isInCart(item.id)
             ?
-            setItems()
+            setItems(items.map((prod) => {
+                    if(prod.id === item.id){
+                        prod.quantity += quantity;
+                    }
+                    return prod;
+            }))
             :
-      setItems([...items, {id: item.id, name: item.title, price: item.price, quantity: quantity }]);
+      setItems([...items, {id: item.id, name: item.name, price: item.price, quantity: quantity }]);
+
 
   
 //  toast.success(`Agregaste ${number} productos`, {
@@ -39,14 +41,21 @@ export const CartProvider = ({ children }) => {
 //   });
   };
 
+  const removeItem = (id) =>{
+    setItems(items.filter(item => item.id !== id))
+  }
+
+  const clearItems = () =>{
+    setItems([])
+  }
 
 //   isInCart(id) ? null : 
 //   const yaExisteEnCarrito = () => {};
 
 
   return (
-    <CartContext.Provider value={{items, addItem}}>
-      //Paso 4{children}
+    <CartContext.Provider value={{items, addItem, removeItem, clearItems}}>
+      {children}
     </CartContext.Provider>
   );
 };

@@ -26,7 +26,7 @@ const ItemDetail = ({
   const {addItem} = useContext(CartContext);
 
 
-  const [addToCart, setAddToCart] = useState(0);
+  
 
 
 
@@ -46,7 +46,7 @@ const ItemDetail = ({
   //   setAddToCart(number);
   // };
 
-  console.log(addToCart);
+  
 
   return (
     <div className="detailContainer">
@@ -81,10 +81,11 @@ const ItemDetail = ({
 
         
           <ItemCount item={item} addItem={addItem} initial={1} stock={10} />
-     
+        
           <Link to="/cart">
             <button className="btn btn-success btn-lg">Terminar compra</button>
           </Link>
+        
 
         <ToastContainer />
       </div>

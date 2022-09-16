@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import { CartContext } from '../Context/CartContext'
-import "./Cart.css"
-import cohete from "../NavBar/cohete.png"
+import React, { useContext } from "react";
+import { CartContext } from "../Context/CartContext";
+import "./Cart.css";
+import cohete from "../NavBar/cohete.png";
 
 const Cart = () => {
-  const {items, addItem} = useContext(CartContext)
+  const { items, removeItems, clearItems } = useContext(CartContext);
 
-
+  console.log(items);
 
   return (
     // <div>
@@ -15,21 +15,30 @@ const Cart = () => {
     // </div>
 
     <div>
-      {items.map((item) =>{
-        <div key={item.id}>
-          <h3>{item.name}</h3>
-        </div>
+      {items.map((item) => {
+        return (
+          <div key={item.id}>
+            <h3>{item.title}</h3>
+            <button
+              onClick={() => {
+                removeItems(item.id);
+              }}
+            >
+              Borrar Producto
+            </button>
+          </div>
+        );
       })}
+
+          <button
+              onClick={() => {
+                clearItems();
+              }}
+            >
+              Vaciar carrito
+          </button>
     </div>
-
-
   );
 };
 
 export default Cart;
-
-
-
-
-
-
