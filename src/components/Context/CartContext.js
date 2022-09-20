@@ -17,6 +17,13 @@ export const CartProvider = ({ children }) => {
   };
 
   const addItem = (item, quantity) => {
+  // // setItems([...items, item])
+  //   const newItems = items.filter(prod  => prod.id !== item.id);
+  //   newItems.push({...items, quantity: newQuantity});
+  //   setItems(newItems)
+
+
+
     isInCart(item.id)
             ?
             setItems(items.map((prod) => {
@@ -26,7 +33,7 @@ export const CartProvider = ({ children }) => {
                     return prod;
             }))
             :
-      setItems([...items, {id: item.id, name: item.name, price: item.price, quantity: quantity }]);
+      setItems([...items, {id: item.id, title: item.title, price: item.price, quantity: quantity }]);
 
 
   

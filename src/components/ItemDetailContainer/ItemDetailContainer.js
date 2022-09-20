@@ -27,7 +27,7 @@ console.log(games)
   return (
     <div>
           
-          {loading ? <Loader/> : <ItemDetail {...games} />}
+          {loading ? <Loader/> : <ItemDetail games={games}  />}
     </div>
   )
   

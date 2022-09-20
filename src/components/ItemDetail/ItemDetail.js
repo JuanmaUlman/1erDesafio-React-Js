@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React from "react";
 import "./ItemDetail.css";
 import ItemCount from "../Count/ItemCount";
 import { Link } from "react-router-dom";
@@ -11,79 +11,72 @@ import { useContext } from "react";
 
 
 const ItemDetail = ({
-  title,
-  pictureURL,
-  description,
-  Voices,
-  Texts,
-  size,
-  RequiredInConsole,
-  installation,
-  price,
+  games,
   item
 }) => {
 
-  const {addItem} = useContext(CartContext);
+  const {addItem, items} = useContext(CartContext);
 
 
   
+console.log(items);
 
 
+  const onAdd = (quantity) => {
+    // alert(`Agregaste ${number} productos`);
+    addItem({...games, quantity});
 
-  // const onAdd = (number) => {
-  //   // alert(`Agregaste ${number} productos`);
+    // toast.success(`Agregaste  productos`, {
+    //   position: "top-right",
+    //   autoClose: 3000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    // });
 
-  //   toast.success(`Agregaste ${number} productos`, {
-  //     position: "top-right",
-  //     autoClose: 3000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //   });
 
-  //   setAddToCart(number);
-  // };
+  };
 
   
 
   return (
     <div className="detailContainer">
       <div>
-        <img src={pictureURL} alt="" className="imageContainer" />
+        <img src={games.pictureURL} alt="" className="imageContainer" />
       </div>
 
       <div className="infoContainer">
         <h2>
-          <b>{title}</b>
+          <b>{games.title}</b>
         </h2>
 
-        <p>{description}</p>
+        <p>{games.description}</p>
         <p>
-          Voces: <b>{Voices}</b>
+          Voces: <b>{games.Voices}</b>
         </p>
         <p>
-          Textos: <b>{Texts}</b>
+          Textos: <b>{games.Texts}</b>
         </p>
         <p>
-          Tamaño: <b>{size}</b>
+          Tamaño: <b>{games.size}</b>
         </p>
         <p>
-          Espacio requerido en consola: <b>{RequiredInConsole}</b>
+          Espacio requerido en consola: <b>{games.RequiredInConsole}</b>
         </p>
         <p>
-          Instalacion: <b>{installation}</b>
+          Instalacion: <b>{games.installation}</b>
         </p>
         <p className="precioDetail1">
-          Precio: <b className="precioDetail2">${price}</b>
+          Precio: <b className="precioDetail2">${games.price}</b>
         </p>
 
         
-          <ItemCount item={item} addItem={addItem} initial={1} stock={10} />
+          <ItemCount item={item} onAdd={onAdd} initial={1} stock={10} />
         
           <Link to="/cart">
-            <button className="btn btn-success btn-lg">Terminar compra</button>
+            <button className="btn btn-success btn-lg px-5 mt-3">Terminar compra</button>
           </Link>
         
 
