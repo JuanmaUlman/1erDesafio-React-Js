@@ -18,11 +18,6 @@ export const CartProvider = ({ children }) => {
 
   const addItem = (item, quantity) => {
   // // setItems([...items, item])
-  //   const newItems = items.filter(prod  => prod.id !== item.id);
-  //   newItems.push({...items, quantity: newQuantity});
-  //   setItems(newItems)
-
-
 
     isInCart(item.id)
             ?
@@ -33,8 +28,12 @@ export const CartProvider = ({ children }) => {
                     return prod;
             }))
             :
-      setItems([...items, {id: item.id, title: item.title, price: item.price, quantity: quantity }]);
+      setItems([...items, {id: item.id, title: item.title, price: item.price, category: item.category, image: item.pictureURL, quantity: quantity }]);
+            console.log(items);
 
+        //   const newItems = items.filter(prod  => prod.id !== item.id);
+  //   newItems.push({...items, quantity: newQuantity});
+  //   setItems(newItems)
 
   
 //  toast.success(`Agregaste ${number} productos`, {
@@ -56,12 +55,24 @@ export const CartProvider = ({ children }) => {
     setItems([])
   }
 
-//   isInCart(id) ? null : 
-//   const yaExisteEnCarrito = () => {};
+
+  const getTotal = () => {
+    // let total = 0
+    return items.reduce((acc, item) => (acc += item.quantity * item.price), 0 )
+  }
+
+  const totalProducts = () =>{
+    return items.reduce((acc, item) => (acc + item.quantity), 0)
+  } 
+//   // totalAPagar.textContent = carritoStorage.reduce((acc, prod) => acc += prod.precio * prod.cantidad, 0)
+// subTotal.textContent =
+// "$" +
+// carritoStorage.reduce((acc, prod) => (acc += prod.precio * prod.cantidad), 0);
+
 
 
   return (
-    <CartContext.Provider value={{items, addItem, removeItem, clearItems}}>
+    <CartContext.Provider value={{items, addItem, removeItem, clearItems, getTotal, totalProducts}}>
       {children}
     </CartContext.Provider>
   );

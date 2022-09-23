@@ -24,7 +24,7 @@ console.log(items);
 
   const onAdd = (quantity) => {
     // alert(`Agregaste ${number} productos`);
-    addItem({...games, quantity});
+    addItem({...games, quantity}, quantity);
 
     // toast.success(`Agregaste  productos`, {
     //   position: "top-right",

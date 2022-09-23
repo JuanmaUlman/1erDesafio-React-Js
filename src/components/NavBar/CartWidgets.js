@@ -16,17 +16,27 @@ items.map((item) => {
 })
 
 
-  return (
-<Button 
-    variant="outlined" 
-    startIcon={<ShoppingCartIcon 
-    />}
-    
->
-{itemsInCart}
-</Button>
+ 
 
-  )
+    if(items.length === 0){
+      return(
+        ''
+      )
+    }{
+return(
+  <Button 
+      variant="outlined" 
+      startIcon={<ShoppingCartIcon 
+      />}
+      
+  >
+  {itemsInCart}
+  </Button>
+
+)
+    }
+
+  
 
 
 }
