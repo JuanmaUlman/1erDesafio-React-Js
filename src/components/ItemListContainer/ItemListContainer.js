@@ -1,57 +1,66 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import ItemList from '../ItemList/ItemList'
-import {getProductsByCategory, products} from '../Mock/products'
-import Loader from '../Loader/Loader'
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ItemList from "../ItemList/ItemList";
+import Loader from "../Loader/Loader";
 
+//Firebase
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../../Firebase/FirebaseConfig";
 
-const ItemListContainer = (props) =>{
+const ItemListContainer = (props) => {
+  const onAdd = (number) => {
+    alert(`Agregaste ${number} productos`);
+  };
 
-const onAdd = (number) =>{
-    alert(`Agregaste ${number} productos`)
-    }
-    
+  const [gamesList, setGamesList] = useState([]);
 
-const [productsList, setProductsList] = useState([]);
-const [loading, setLoading] = useState(false)
-const {categoryId} = useParams()
+const getGames = async () => {
+    const q = query(collection(db, "games"));
+    const docs = [];
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      // console.log(doc.id, " => ", doc.data());
+      docs.push({ ...doc.data(), id: doc.id });
+      setGamesList(docs);
+    });
+  };
+  console.log(gamesList);
 
-const getProducts = () => 
-    new Promise((resolve, reject) =>{
-        setTimeout(() => resolve(products), 2000)
-    })
+  // const [productsList, setProductsList] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { categoryId } = useParams();
 
-    
-useEffect(() => {
+  // const getProducts = () =>
+  //     new Promise((resolve, reject) =>{
+  //         setTimeout(() => resolve(products), 2000)
+  //     })
+
+  useEffect(() => {
     setLoading(true)
+    getGames();
+    setLoading(false)
+    // if(!categoryId){
+    //     getProducts()
+    // .then(products => {setProductsList(products)
+    // setLoading(false)})
+    // .catch(error => console.error(error)
 
-    if(!categoryId){
-        getProducts()
-    .then(products => {setProductsList(products)
-    setLoading(false)})
-    .catch(error => console.error(error)
+    // )}else{
+    //     getProductsByCategory(categoryId)
+    //         .then(products => {setProductsList(products)
+    //         setLoading(false)}
+    //         )
 
-    )}else{
-        getProductsByCategory(categoryId)
-            .then(products => {setProductsList(products)
-            setLoading(false)}
-            )
-        
-    }
+    // }
+  }, []);
 
-}, [categoryId])
-
-
-
-    return(
+  return (
     <>
-        <h2>{props.saludo}</h2>
-        {loading ? <Loader/> : <ItemList productsList={productsList}/>}
-        
-
+      <h2>{props.saludo}</h2>
+      {loading ? <Loader /> : <ItemList gamesList={gamesList} />}
     </>
-    )
-}
+  );
+};
 
-
-export default ItemListContainer
+export default ItemListContainer;

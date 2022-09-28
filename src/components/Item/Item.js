@@ -8,6 +8,8 @@ import './Item.css'
 // import ItemCount from '../Count/ItemCount'
 import { Link } from 'react-router-dom'
 
+
+
  const MultiActionAreaCard = ({img, title, description, price, id}) => {
 //  const onAdd = (number) =>{
 //         alert(`Agregaste ${number} productos`)

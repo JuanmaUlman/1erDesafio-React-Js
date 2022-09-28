@@ -14,7 +14,7 @@ const ItemDetail = ({
   games,
   item
 }) => {
-
+console.log(games);
   const {addItem, items} = useContext(CartContext);
 
 
