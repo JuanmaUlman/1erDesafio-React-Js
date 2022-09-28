@@ -7,7 +7,7 @@ import Loader from '../Loader/Loader'
 
 
 //Firebase
-import { collection, query, where, getDocs, documentId, doc } from "firebase/firestore";
+import { collection, query, where, getDocs, documentId } from "firebase/firestore";
 import { db } from "../../Firebase/FirebaseConfig";
 
 
@@ -23,19 +23,17 @@ const ItemDetailContainer = () => {
     const getGames = async () => {
       const q = query(collection(db, "games"), where(documentId(), "==", id));
 
-      const docs = [];
+      let docs;
       
       const querySnapshot = await getDocs(q);
       
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         // console.log(doc.id, " => ", doc.data());
-        docs.push({ ...doc.data(), id: doc.id });
-
+        docs = ({ ...doc.data(), id: doc.id });
+        console.log(docs);
       });
-
       setGames(docs);
-
     };
     // setLoading(true)
     getGames()
