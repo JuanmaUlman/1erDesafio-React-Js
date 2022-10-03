@@ -11,18 +11,18 @@ export const CartProvider = ({ children }) => {
 
 
 
-  const isInCart = (id) => {
-    const found = items.find(item => item.id === id)
+  const isInCart = (title) => {
+    const found = items.find(item => item.title === title)
     return found
   };
 
   const addItem = (item, quantity) => {
   // // setItems([...items, item])
 
-    isInCart(item.id)
+    isInCart(item.title)
             ?
             setItems(items.map((prod) => {
-                    if(prod.id === item.id){
+                    if(prod.title === item.title){
                         prod.quantity += quantity;
                     }
                     return prod;
@@ -30,10 +30,6 @@ export const CartProvider = ({ children }) => {
             :
       setItems([...items, {id: item.id, title: item.title, price: item.price, category: item.category, image: item.pictureURL, quantity: quantity }]);
             console.log(items);
-
-        //   const newItems = items.filter(prod  => prod.id !== item.id);
-  //   newItems.push({...items, quantity: newQuantity});
-  //   setItems(newItems)
 
   
 //  toast.success(`Agregaste ${number} productos`, {
@@ -47,8 +43,8 @@ export const CartProvider = ({ children }) => {
 //   });
   };
 
-  const removeItem = (id) =>{
-    setItems(items.filter(item => item.id !== id))
+  const removeItem = (title) =>{
+    setItems(items.filter(item => item.title !== title))
   }
 
   const clearItems = () =>{

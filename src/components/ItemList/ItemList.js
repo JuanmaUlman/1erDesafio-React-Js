@@ -4,7 +4,7 @@ import Item from "../Item/Item";
 
 const ItemList = ({gamesList}) => {
   return (
-    <div className="Item-container">
+    <div className="card">
       {gamesList.map((item) => {
         return (
           <Item

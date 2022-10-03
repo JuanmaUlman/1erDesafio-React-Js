@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Button} from '@mui/material';
 import { CartContext } from '../Context/CartContext';
+import { Link } from 'react-router-dom';
 
 
 
@@ -24,7 +25,8 @@ items.map((item) => {
       )
     }{
 return(
-  <Button 
+<Link to='cart'>
+<Button 
       variant="outlined" 
       startIcon={<ShoppingCartIcon 
       />}
@@ -32,6 +34,8 @@ return(
   >
   {itemsInCart}
   </Button>
+</Link>
+
 
 )
     }

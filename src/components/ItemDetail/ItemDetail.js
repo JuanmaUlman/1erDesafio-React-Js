@@ -76,7 +76,7 @@ console.log(items);
           <ItemCount item={item} onAdd={onAdd} initial={1} stock={10} />
         
           <Link to="/cart">
-            <button className="btn btn-success btn-lg px-5 mt-3">Terminar compra</button>
+            <button className="btn btn-success btn-lg px-5 mt-3">Ir al carrito</button>
           </Link>
         
 

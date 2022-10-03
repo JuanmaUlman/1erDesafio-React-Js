@@ -32,13 +32,12 @@ const Cart = () => {
   }
   {
     return (
-      <div >
+      <div>
         <div className="cartContainer">
-
-        {items.map((item) => {
-          return (
-            <div key={item.id}>
-              {/* <h3>{item.title}</h3>
+          {items.map((item) => {
+            return (
+              <div key={item.id}>
+                {/* <h3>{item.title}</h3>
               <button
                 onClick={() => {
                   removeItem(item.id);
@@ -47,69 +46,63 @@ const Cart = () => {
                 Borrar Producto
               </button> */}
 
-              <Card sx={{ maxWidth: 200 }}>
-                <CardMedia
-                  component="img"
-                  alt="green iguana"
-                  image={item.image}
-                />
-                <CardContent style={{ textAlign: "start", marginTop: "" }}>
-                  <Typography gutterBottom variant="body1" component="div">
-                    {item.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.primary">
-                    Equipo: {item.category}
-                  </Typography>
-                  <Typography variant="body2" color="text.primary">
-                    Cantidad seleccionada: {item.quantity}
-                  </Typography>
-                  <Typography variant="body2" color="text.primary">
-                    Precio: ${item.price}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button
-                    variant="outlined"
-                    size="small"
-                    startIcon={<DeleteIcon />}
-                    onClick={() => {
-                      removeItem(item.id);
-                    }}
-                  >
-                    Borrar Producto
-                  </Button>
+                <Card sx={{ maxWidth: 200 }}>
+                  <CardMedia
+                    component="img"
+                    alt="green iguana"
+                    image={item.image}
+                  />
+                  <CardContent style={{ textAlign: "start", marginTop: "" }}>
+                    <Typography gutterBottom variant="body1" component="div">
+                      {item.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.primary">
+                      Equipo: {item.category}
+                    </Typography>
+                    <Typography variant="body2" color="text.primary">
+                      Cantidad seleccionada: {item.quantity}
+                    </Typography>
+                    <Typography variant="body2" color="text.primary">
+                      Precio: ${item.price}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      startIcon={<DeleteIcon />}
+                      onClick={() => {
+                        removeItem(item.title);
+                      }}
+                    >
+                      Borrar Producto
+                    </Button>
 
-                  {/* <Button size="small"               onClick={() => {
+                    {/* <Button size="small"               onClick={() => {
                   removeItem(item.id);
                 }}>Borrar Producto</Button> */}
-                </CardActions>
-              </Card>
-            </div>
-          );
-        })}
-
-
+                  </CardActions>
+                </Card>
+              </div>
+            );
+          })}
         </div>
 
-
-<div className="finalItems">
-<button
-          onClick={() => {
-            clearItems();
-          }}
-          className='btn btn-danger'
-        >
-          Vaciar carrito
-        </button>
-        <h3>Cantidad de productos en el carrito: {totalProducts()}</h3>
-        <h3>Total en carrito: ${getTotal()}</h3>
-
-</div>
-
-
-
-
-        
+        <div className="finalItems">
+          <button
+            onClick={() => {
+              clearItems();
+            }}
+            className="btn btn-danger"
+          >
+            Vaciar carrito
+          </button>
+          <Link to='shop'>
+          <button className="btn btn-success">Finalizar Compra</button>
+          </Link>
+          <h3>Cantidad de productos en el carrito: {totalProducts()}</h3>
+          <h3>Total en carrito: ${getTotal()}</h3>
+        </div>
       </div>
     );
   }

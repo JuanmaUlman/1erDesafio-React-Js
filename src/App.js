@@ -4,11 +4,12 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
 import Cart from "./components/Cart/Cart";
-
+import Shop from "./components/Shop/Shop";
 //react-router-dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { CartContext, CartProvider } from "./components/Context/CartContext";
-import ItemDetail from "./components/ItemDetail/ItemDetail";
+import { CartProvider } from "./components/Context/CartContext";
+
+import CategoryType from "./components/CategoryType/CategoryType";
 
 const App = () => {
   return (
@@ -22,9 +23,10 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<ItemListContainer saludo="Pixeles Games" />}/>
-          <Route path="category/:categoryId" element={<ItemListContainer />}/>
+          <Route path="category/:categoryId" element={<CategoryType />}/>
           <Route path="/item/:id" element={<ItemDetailContainer />}/>
           <Route path="/cart" element={<Cart />}/>
+          <Route path="/cart/shop" element={<Shop />}/>
         </Routes>
       </div>
         

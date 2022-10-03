@@ -16,15 +16,15 @@ import { Link } from 'react-router-dom'
 //       }
 
   return (
-    <Card className='card' >
-      <CardActionArea className='cardContent' >
+    <Card >
+      <CardActionArea sx={{ maxWidth: 345 }}>
         <CardMedia
           component="img"
 
           image={img}
           alt=""
         />
-        <CardContent>
+        <CardContent >
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
