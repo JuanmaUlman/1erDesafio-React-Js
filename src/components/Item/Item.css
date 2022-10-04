@@ -2,16 +2,19 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 15px;
-    
+}    
 
+.Link{
+    text-decoration: none;
+}
 
-    /* display: flex;
+.cardItem{
+    display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
-    margin: 20px;
-    text-align: 'center' */
+    margin-top: 20px;
 }
+
  
 .cardContent{
     display: flex;

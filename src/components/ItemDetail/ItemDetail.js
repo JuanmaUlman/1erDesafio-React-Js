@@ -3,7 +3,7 @@ import "./ItemDetail.css";
 import ItemCount from "../Count/ItemCount";
 import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-
+import { Button } from '@mui/material';
 import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
 
@@ -75,8 +75,9 @@ console.log(items);
         
           <ItemCount item={item} onAdd={onAdd} initial={1} stock={10} />
         
-          <Link to="/cart">
-            <button className="btn btn-success btn-lg px-5 mt-3">Ir al carrito</button>
+          <Link to="/cart" className="Link">
+            {/* <button className="btn btn-success btn-lg px-5 mt-3">Ir al carrito</button> */}
+            <Button variant="contained" color='success' size="large" style={{marginTop: '10px', paddingLeft: '43px', paddingRight:'43px'}}>Ir al carrito</Button>
           </Link>
         
 

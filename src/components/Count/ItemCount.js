@@ -1,5 +1,5 @@
 import React, {useState } from "react";
-
+import { Button } from '@mui/material';
 
 
 const CounterApp = ({ stock, initial, onAdd}) =>{
@@ -23,7 +23,10 @@ return(
             <button onClick={() => addProduct(+1)} disabled={number === stock} className="btn btn-primary px-3 ">+</button>
         </div>
 
-        <button onClick={() => onAdd(number)} disabled={stock === 0 ? true : null} className="btn btn-warning btn-lg px-5">Añadir al carrito</button>
+        {/* <button onClick={() => onAdd(number)} disabled={stock === 0 ? true : null} className="btn btn-warning btn-lg px-5">Añadir al carrito</button> */}
+
+        <Button onClick={() => onAdd(number)} disabled={stock === 0 ? true : null} variant="contained" color='info' size="large" style={{marginTop: '10px'}}>Añadir al carrito</Button>
+
 
     </div>
 )

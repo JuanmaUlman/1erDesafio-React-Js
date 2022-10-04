@@ -12,13 +12,13 @@ const Shop = () => {
   const { getTotal, items } = useContext(CartContext);
 
   const purchaseOrder = {
-    buyer: {
-      nombre: "",
-      telefono: "",
-      email: "",
-    },
+    // buyer: {
+    //   nombre: "",
+    //   telefono: "",
+    //   email: "",
+    // },
     items: items.map((game) => ({
-  
+
       title: game.title,
       price: game.price,
     })),

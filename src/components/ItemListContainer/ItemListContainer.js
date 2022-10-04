@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
 
@@ -29,30 +29,14 @@ const getGames = async () => {
 
   // const [productsList, setProductsList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { categoryId } = useParams();
+  // const { categoryId } = useParams();
 
-  // const getProducts = () =>
-  //     new Promise((resolve, reject) =>{
-  //         setTimeout(() => resolve(products), 2000)
-  //     })
 
   useEffect(() => {
     setLoading(true)
     getGames();
     setLoading(false)
-    // if(!categoryId){
-    //     getProducts()
-    // .then(products => {setProductsList(products)
-    // setLoading(false)})
-    // .catch(error => console.error(error)
 
-    // )}else{
-    //     getProductsByCategory(categoryId)
-    //         .then(products => {setProductsList(products)
-    //         setLoading(false)}
-    //         )
-
-    // }
   }, []);
 
   return (
