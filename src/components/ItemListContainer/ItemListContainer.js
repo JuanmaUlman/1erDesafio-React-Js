@@ -12,6 +12,8 @@ const ItemListContainer = (props) => {
     alert(`Agregaste ${number} productos`);
   };
 
+  const [loading, setLoading] = useState(false);
+
   const [gamesList, setGamesList] = useState([]);
 
 const getGames = async () => {
@@ -28,20 +30,27 @@ const getGames = async () => {
   console.log(gamesList);
 
   // const [productsList, setProductsList] = useState([]);
-  const [loading, setLoading] = useState(false);
+
   // const { categoryId } = useParams();
 
 
   useEffect(() => {
     setLoading(true)
     getGames();
-    setLoading(false)
+
+    setTimeout(() => {
+      setLoading(false);
+    },2000)
+
+
+    // setLoading(false)
 
   }, []);
 
   return (
     <>
-      <h2>{props.saludo}</h2>
+      <h3>{props.saludo}</h3>
+      {/* <Loader /> */}
       {loading ? <Loader /> : <ItemList gamesList={gamesList} />}
     </>
   );

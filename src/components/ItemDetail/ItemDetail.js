@@ -26,7 +26,7 @@ console.log(items);
     // alert(`Agregaste ${number} productos`);
     addItem({...games, quantity}, quantity);
 
-    // toast.success(`Agregaste  productos`, {
+    // toast.success(`Agregaste  `, {
     //   position: "top-right",
     //   autoClose: 3000,
     //   hideProgressBar: false,

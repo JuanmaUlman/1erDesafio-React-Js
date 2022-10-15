@@ -35,7 +35,11 @@ const CategoryType = () => {
         
 
         getGames();
-        setLoading(false)
+
+        setTimeout(() => {
+          setLoading(false);
+        },2000)
+        // setLoading(false)
 
       }, [categoryId]);
 

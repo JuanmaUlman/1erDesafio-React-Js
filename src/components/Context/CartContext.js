@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
 
 
@@ -8,6 +8,10 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
 
   const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(items));
+    }, [items])
 
 
 
@@ -31,16 +35,7 @@ export const CartProvider = ({ children }) => {
       setItems([...items, {id: item.id, title: item.title, price: item.price, category: item.category, image: item.pictureURL, quantity: quantity }]);
             console.log(items);
 
-  
-//  toast.success(`Agregaste ${number} productos`, {
-//     position: "top-right",
-//     autoClose: 3000,
-//     hideProgressBar: false,
-//     closeOnClick: true,
-//     pauseOnHover: true,
-//     draggable: true,
-//     progress: undefined,
-//   });
+
   };
 
   const removeItem = (title) =>{

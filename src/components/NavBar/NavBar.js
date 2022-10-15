@@ -11,7 +11,8 @@ const NavBar = (props) => {
         <Link to="/">
         <img src={cohete} className="cohete bg-light" alt="cohete" />
         </Link>
-        <div className="navbar-nav">
+        <h2 style={{marginLeft: '40px', color: 'blue'}}>Pixeles Digital Games</h2>
+        {/* <div className="navbar-nav">
           <a
             className="nav-link boton btn btn-light mx-1"
             aria-current="page"
@@ -22,7 +23,7 @@ const NavBar = (props) => {
           <a className="nav-link boton btn btn-light mx-1" href="/">
             Registrarse
           </a>
-        </div>
+        </div> */}
 
         <button
           className="navbar-toggler"
@@ -53,11 +54,11 @@ const NavBar = (props) => {
             >
               PC
             </Link>
-            <Link to="/category/xboxOne"
+            {/* <Link to="/category/xboxOne"
               className="nav-link boton2 btn btn-light text-end mx-1"
             >
               Xbox One
-            </Link>
+            </Link> */}
             <Link to="/category/ps3"
               className="nav-link boton2 btn btn-light text-end mx-1"
             >

@@ -8,6 +8,7 @@ import "./Item.css";
 // import ItemCount from '../Count/ItemCount'
 import { Link } from "react-router-dom";
 
+
 const MultiActionAreaCard = ({ img, title, description, price, id }) => {
   //  const onAdd = (number) =>{
   //         alert(`Agregaste ${number} productos`)
@@ -15,8 +16,8 @@ const MultiActionAreaCard = ({ img, title, description, price, id }) => {
 
   return (
     <Card className="cardItem">
-      <CardActionArea sx={{ maxWidth: 300 }}>
-        <CardMedia component="img" image={img} alt="" />
+      <CardActionArea sx={{ maxWidth: 300}} className="img" >
+        <CardMedia component="img" image={img} alt="img" className="imgContent" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}
