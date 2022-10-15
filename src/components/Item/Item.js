@@ -17,7 +17,7 @@ const MultiActionAreaCard = ({ img, title, description, price, id }) => {
   return (
     <Card className="cardItem">
       <CardActionArea sx={{ maxWidth: 300}} className="img" >
-        <CardMedia component="img" image={img} alt="img" className="imgContent" />
+        <CardMedia component="img" image={img} alt="img"  />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}
