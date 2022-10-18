@@ -4,38 +4,35 @@
 	gap: 15px;
 }    
 
-
 .Link{
     text-decoration: none;
 }
 
 .cardItem{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items:center;
-    margin-top: 20px;
-
-    align-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    align-content: space-around;
+    width: auto;
+    height: auto;
 }
 
- 
+.cardItem:hover{
+    transform: scale(1.05);
+    transition: 1s;
+}
+
 .cardContent{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-self: center;
-    
-}
-.imgContent{
-height: 450px;
-width: 100%;
-object-fit: cover;
 }
 
 .precio{
-
     color: orangered;
-
 }
 
 .img {

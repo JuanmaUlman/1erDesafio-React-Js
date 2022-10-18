@@ -8,29 +8,31 @@ import "./Item.css";
 // import ItemCount from '../Count/ItemCount'
 import { Link } from "react-router-dom";
 
-
 const MultiActionAreaCard = ({ img, title, description, price, id }) => {
   //  const onAdd = (number) =>{
   //         alert(`Agregaste ${number} productos`)
   //       }
 
   return (
-    <Card 
-    className="cardItem"
-    sx={{maxWidth: 330}}
-    >
-      <CardActionArea 
+    <Card
+      className="cardItem"
       sx={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-      }}>
-        
-        <CardMedia component="img" image={img} alt="img"  className="img"    sx={{maxWidth: 350,
-        height: '65vh',}}/>
+        maxWidth: 300,
+        height: "100%",
+      }}
+    >
+      <CardActionArea
+        sx={{
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+        className=""
+      >
+        <CardMedia component="img" image={img} alt="img" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}

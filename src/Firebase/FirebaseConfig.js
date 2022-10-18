@@ -8,12 +8,12 @@ import {getFirestore} from 'firebase/firestore'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCAgDqFdQ6I7RoqGt2iyPuPnCMkZTmqCEg",
-  authDomain: "pixeles-games.firebaseapp.com",
+  apiKey: `${process.env.REACT_APP_API_KEY}`,
+  authDomain: `${process.env.REACT_APP_authDomain}`,
   projectId: "pixeles-games",
-  storageBucket: "pixeles-games.appspot.com",
-  messagingSenderId: "245059447265",
-  appId: "1:245059447265:web:bc665f50e58211c5764aa0"
+  storageBucket: `${process.env.REACT_APP_storageBucket}`,
+  messagingSenderId: `${process.env.REACT_APP_messagingSenderId}`,
+  appId: `${process.env.REACT_APP_appId}`
 };
 
 // Initialize Firebase

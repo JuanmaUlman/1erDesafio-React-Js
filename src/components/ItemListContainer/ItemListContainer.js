@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
+import './ItemListContainer.css'
 
 //Firebase
 import { collection, query, where, getDocs } from "firebase/firestore";
@@ -48,11 +49,13 @@ const getGames = async () => {
   }, []);
 
   return (
-    <>
-      <h3>{props.saludo}</h3>
-      {/* <Loader /> */}
+    <div >
+      {/* <h3>{props.saludo}</h3> */}
+
+    <div className="ListContainer">
       {loading ? <Loader /> : <ItemList gamesList={gamesList} />}
-    </>
+    </div>
+    </div>
   );
 };
 

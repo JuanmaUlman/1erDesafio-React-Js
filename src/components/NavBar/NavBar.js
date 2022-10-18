@@ -11,7 +11,8 @@ const NavBar = (props) => {
         <Link to="/">
         <img src={cohete} className="cohete bg-light" alt="cohete" />
         </Link>
-        <h2 style={{marginLeft: '40px', color: 'blue'}}>Pixeles Digital Games</h2>
+        <h2 style={{marginLeft: '40px', color: 'black', boxShadow: '6px 6px 6px 5px #4d0303', borderRadius: '4px', padding:'2px'}}>Pixeles Digital Games</h2>
+        
         {/* <div className="navbar-nav">
           <a
             className="nav-link boton btn btn-light mx-1"
@@ -74,11 +75,13 @@ const NavBar = (props) => {
             >
               Ps5
             </Link>
-            <CartWidgets />
           </div>
         </div>
+        <CartWidgets />
       </div>
+            
     </nav>
+    
   );
 };
 

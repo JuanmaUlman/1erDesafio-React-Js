@@ -2,7 +2,7 @@ import React from "react";
 import "./ItemDetail.css";
 import ItemCount from "../Count/ItemCount";
 import { Link } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { Button } from '@mui/material';
 import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
@@ -26,15 +26,15 @@ console.log(items);
     // alert(`Agregaste ${number} productos`);
     addItem({...games, quantity}, quantity);
 
-    // toast.success(`Agregaste  `, {
-    //   position: "top-right",
-    //   autoClose: 3000,
-    //   hideProgressBar: false,
-    //   closeOnClick: true,
-    //   pauseOnHover: true,
-    //   draggable: true,
-    //   progress: undefined,
-    // });
+    toast.success(`Agregaste la cantidad de ${quantity} juego/s digitales, con el nombre de ${games.title} al carrito`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
 
   };

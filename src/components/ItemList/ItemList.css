@@ -1,0 +1,26 @@
+.itemContent{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 65px;
+}    
+
+@media screen and (max-width: 600px) { 
+    .itemContent{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        
+    }
+  
+}
+
+
+@media screen and (max-width: 850px) { 
+    .itemContent{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        
+    }
+  
+}

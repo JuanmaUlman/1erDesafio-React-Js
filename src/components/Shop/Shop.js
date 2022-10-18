@@ -21,7 +21,7 @@ import { Formik } from 'formik';
 const yupSchema= yup.object().shape({
   nombre: yup.string().min(3, 'Es necesario un minimo de 3 caracteres').required('El campo es requerido'),
   telefono: yup.number().min(3, 'Es necesario un minimo de 3 caracteres').required('El campo es requerido'),
-  email: yup.string().email().required('El campo es requerido') 
+  email: yup.string().email('Debe ingresar un caracter valido, ejemplo test@test.com').required('El campo es requerido') 
 }).required()
 
 
@@ -30,11 +30,7 @@ const Shop = () => {
   const { getTotal, items } = useContext(CartContext);
 
   const purchaseOrder = {
-    // buyer: {
-    //   nombre: "",
-    //   telefono: "",
-    //   email: "",
-    // },
+
     items: items.map((game) => ({
 
       title: game.title,
@@ -70,7 +66,7 @@ const Shop = () => {
 
   return (
     <div>
-      <h1> Shop </h1>
+      <h3 className="titleForm"> Por favor, complete el formulario para finalizar la compra </h3>
 
       <Formik 
     initialValues={{nombre: '', telefono: '', email: ''}}
@@ -108,7 +104,7 @@ onSubmit(purchaseOrder)
     }) =>(
       <form className="form" onSubmit={handleSubmit}>
         <TextField
-          placeholder="Nombre"
+          placeholder="Ingrese un Nombre"
           style={{ margin: 10, width: 400 }}
           name="nombre"
           value={values.nombre}
@@ -119,7 +115,7 @@ onSubmit(purchaseOrder)
         {errors.nombre && touched.nombre && errors.nombre}
 
         <TextField
-          placeholder="Telefono"
+          placeholder="Ingrese un Telefono"
           type="number"
           style={{ margin: 10, width: 400 }}
           name="telefono"
@@ -131,7 +127,16 @@ onSubmit(purchaseOrder)
         {errors.telefono && touched.telefono && errors.telefono}
 
         <TextField
-          placeholder="Email"
+          placeholder="Ingrese un Email"
+          style={{ margin: 10, width: 400 }}
+          name="email"
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {errors.email && touched.email && errors.email}
+        <TextField
+          placeholder="Confirme el Email"
           style={{ margin: 10, width: 400 }}
           name="email"
           value={values.email}

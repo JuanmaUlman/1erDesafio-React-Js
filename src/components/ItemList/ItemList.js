@@ -1,10 +1,10 @@
 import React from "react";
 import Item from "../Item/Item";
-
+import './ItemList.css'
 
 const ItemList = ({gamesList}) => {
   return (
-    <div className="card">
+    <div className="itemContent">
       {gamesList.map((item) => {
         return (
           <Item
