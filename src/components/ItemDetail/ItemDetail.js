@@ -3,43 +3,32 @@ import "./ItemDetail.css";
 import ItemCount from "../Count/ItemCount";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import { Button } from '@mui/material';
+import { Button } from "@mui/material";
 import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
 
+const ItemDetail = ({ games, item }) => {
+  console.log(games);
+  const { addItem, items } = useContext(CartContext);
 
-
-
-const ItemDetail = ({
-  games,
-  item
-}) => {
-console.log(games);
-  const {addItem, items} = useContext(CartContext);
-
-
-  
-console.log(items);
-
+  console.log(items);
 
   const onAdd = (quantity) => {
-    // alert(`Agregaste ${number} productos`);
-    addItem({...games, quantity}, quantity);
+    addItem({ ...games, quantity }, quantity);
 
-    toast.success(`Agregaste la cantidad de ${quantity} juego/s digitales, con el nombre de ${games.title} al carrito`, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-
-
+    toast.success(
+      `Agregaste la cantidad de ${quantity} juego/s digitales, con el nombre de ${games.title} al carrito`,
+      {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      }
+    );
   };
-
-  
 
   return (
     <div className="detailContainer">
@@ -72,14 +61,22 @@ console.log(items);
           Precio: <b className="precioDetail2">${games.price}</b>
         </p>
 
-        
-          <ItemCount item={item} onAdd={onAdd} initial={1} stock={10} />
-        
-          <Link to="/cart" className="Link">
-            {/* <button className="btn btn-success btn-lg px-5 mt-3">Ir al carrito</button> */}
-            <Button variant="contained" color='success' size="large" style={{marginTop: '10px', paddingLeft: '43px', paddingRight:'43px'}}>Ir al carrito</Button>
-          </Link>
-        
+        <ItemCount item={item} onAdd={onAdd} initial={1} stock={10} />
+
+        <Link to="/cart" className="Link">
+          <Button
+            variant="contained"
+            color="success"
+            size="large"
+            style={{
+              marginTop: "10px",
+              paddingLeft: "43px",
+              paddingRight: "43px",
+            }}
+          >
+            Ir al carrito
+          </Button>
+        </Link>
 
         <ToastContainer />
       </div>

@@ -8,49 +8,34 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../Firebase/FirebaseConfig";
 
 const CategoryType = () => {
+  const [gamesList, setGamesList] = useState([]);
 
-    
-    const [gamesList, setGamesList] = useState([]);
-    
+  const [loading, setLoading] = useState(false);
+  const { categoryId } = useParams();
 
-      // const [productsList, setProductsList] = useState([]);
-      const [loading, setLoading] = useState(false);
-      const { categoryId } = useParams();
-    
+  useEffect(() => {
+    setLoading(true);
+    const getGames = async () => {
+      const q = query(
+        collection(db, "games"),
+        where("category", "==", categoryId)
+      );
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+        setGamesList(docs);
+      });
+    };
 
-    
-      useEffect(() => {
-        setLoading(true)
-        const getGames = async () => {
-            const q = query(collection(db, "games"), where('category', "==", categoryId));
-            const docs = [];
-            const querySnapshot = await getDocs(q);
-            querySnapshot.forEach((doc) => {
+    getGames();
 
-              docs.push({ ...doc.data(), id: doc.id });
-              setGamesList(docs);
-            });
-          };
-    
-        
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, [categoryId]);
 
-        getGames();
+  return <div>{loading ? <Loader /> : <ItemList gamesList={gamesList} />}</div>;
+};
 
-        setTimeout(() => {
-          setLoading(false);
-        },2000)
-        // setLoading(false)
-
-      }, [categoryId]);
-
-
-
-
-  return (
-    <div>
-        {loading ? <Loader /> : <ItemList gamesList={gamesList} />}
-    </div>
-  )
-}
-
-export default CategoryType
+export default CategoryType;

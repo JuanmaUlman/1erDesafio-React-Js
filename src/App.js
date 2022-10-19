@@ -15,21 +15,24 @@ const App = () => {
   return (
     <Router>
       <CartProvider>
+        <div className="App container-fluid bg-light">
+          <div className="row">
+            <NavBar />
+          </div>
 
-      <div className="App container-fluid">
-        <div className="row">
-          <NavBar />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <ItemListContainer saludo="Selecciona tu juego favorito, y subi al siguiente nivel!!" />
+              }
+            />
+            <Route path="category/:categoryId" element={<CategoryType />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart/shop" element={<Shop />} />
+          </Routes>
         </div>
-
-        <Routes>
-          <Route path="/" element={<ItemListContainer saludo="Selecciona tu juego favorito, y subi al siguiente nivel!!" />}/>
-          <Route path="category/:categoryId" element={<CategoryType />}/>
-          <Route path="/item/:id" element={<ItemDetailContainer />}/>
-          <Route path="/cart" element={<Cart />}/>
-          <Route path="/cart/shop" element={<Shop />}/>
-        </Routes>
-      </div>
-        
       </CartProvider>
     </Router>
   );

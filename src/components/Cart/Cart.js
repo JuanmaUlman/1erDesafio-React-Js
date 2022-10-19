@@ -30,77 +30,77 @@ const Cart = () => {
       </div>
     );
   }
-  {
-    return (
-      <div>
-        <div className="cartContainer">
-          {items.map((item) => {
-            return (
-              <div key={item.id}>
-                <Card sx={{ maxWidth: 200 }}>
-                  <CardMedia
-                    component="img"
-                    alt="green iguana"
-                    image={item.image}
-                  />
-                  <CardContent style={{ textAlign: "start", marginTop: "" }}>
-                    <Typography gutterBottom variant="body1" component="div">
-                      {item.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.primary">
-                      Equipo: {item.category}
-                    </Typography>
-                    <Typography variant="body2" color="text.primary">
-                      Cantidad seleccionada: {item.quantity}
-                    </Typography>
-                    <Typography variant="body2" color="text.primary">
-                      Precio: ${item.price}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button
-                      variant="outlined"
-                      size="small"
-                      startIcon={<DeleteIcon />}
-                      onClick={() => {
-                        removeItem(item.title);
-                      }}
-                    >
-                      Borrar Producto
-                    </Button>
-                  </CardActions>
-                </Card>
-              </div>
-            );
-          })}
-        </div>
 
-        <div className="finalItems">
+  return (
+    <div>
+      <div className="cartContainer">
+        {items.map((item) => {
+          return (
+            <div key={item.id}>
+              <Card sx={{ maxWidth: 200 }}>
+                <CardMedia
+                  component="img"
+                  alt="green iguana"
+                  image={item.image}
+                />
+                <CardContent style={{ textAlign: "start", marginTop: "" }}>
+                  <Typography gutterBottom variant="body1" component="div">
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.primary">
+                    Equipo: {item.category}
+                  </Typography>
+                  <Typography variant="body2" color="text.primary">
+                    Cantidad seleccionada: {item.quantity}
+                  </Typography>
+                  <Typography variant="body2" color="text.primary">
+                    Precio: ${item.price}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    startIcon={<DeleteIcon />}
+                    onClick={() => {
+                      removeItem(item.title);
+                    }}
+                  >
+                    Borrar Producto
+                  </Button>
+                </CardActions>
+              </Card>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="finalItems">
+        <Button
+          className="btn-vaciar"
+          onClick={() => {
+            clearItems();
+          }}
+          variant="contained"
+          color="error"
+          style={{ marginTop: "10px" }}
+        >
+          Vaciar carrito
+        </Button>
+        <Link to="shop" className="Link">
           <Button
-            onClick={() => {
-              clearItems();
-            }}
+           className="btn-finalizar"
             variant="contained"
-            color="error"
+            color="success"
             style={{ marginTop: "10px" }}
           >
-            Vaciar carrito
+            Finalizar Compra
           </Button>
-          <Link to="shop" className="Link">
-            <Button
-              variant="contained"
-              color="success"
-              style={{ marginTop: "10px" }}
-            >
-              Finalizar Compra
-            </Button>
-          </Link>
-          <h3>Cantidad de productos en el carrito: {totalProducts()}</h3>
-          <h3>Total en carrito: ${getTotal()}</h3>
-        </div>
+        </Link>
+        <h3>Cantidad de productos en el carrito: {totalProducts()}</h3>
+        <h3>Total en carrito: ${getTotal()}</h3>
       </div>
-    );
-  }
+    </div>
+  );
 };
-
 export default Cart;

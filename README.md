@@ -6,7 +6,7 @@ Cuenta con 23 juegos de diferentes consolas cargados en una base de datos de Fir
 
 El proyecto fue creado con el CLI de React [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+
 
 ## Para levantar el proyecto, utilizar el siguiente comando en la consola:
 
@@ -14,24 +14,24 @@ El proyecto fue creado con el CLI de React [Create React App](https://github.com
 
 La App abre en el puerto [http://localhost:3000](http://localhost:3000) del navegador.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+
 
 ## Las dependencias que se utilizaron en el proyecto son:
-- [ ] Firebase
-- [ ] Material Ui
-- [ ] Bootstrap
-- [ ] React-router-dom
-- [ ] React-toastify
-- [ ] Formik
-- [ ] Yup
+- [ ] Firebase: como base de datos, tanto de los productos como de la orden de compra.
+- [ ] Material Ui: Para dar estilo con sus diferentes componentes.
+- [ ] Bootstrap: Para la barra de navegacion.
+- [ ] React-router-dom: Usado en las rutas de navegacion.
+- [ ] React-toastify: Para dar estilo a las notificaciones.
+- [ ] Formik: Para validar el formulario de la compra.
+- [ ] Yup: Para validar el formulario de la compra.
 
-Firebase:  como base de datos, tanto de los productos como de la orden de compra.
-Material Ui: Para dar estilo con sus diferentes componentes.
-Bootstrap: Para la barra de navegacion.
-React-router-dom: Usado en las rutas de navegacion.
-React-toastify: Para dar estilo a las notificaciones.
-Formik y Yup: Para validar el formulario de la compra.
+
+
+## Gif de un proceso de compra en el sitio web
+ 
+<p>
+<img src="./gif-readme/ProcesoDeCompra.gif" alt="ProcesoDeCompra">
+</p>
 
 
 

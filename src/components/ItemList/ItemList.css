@@ -15,11 +15,11 @@
 }
 
 
-@media screen and (max-width: 850px) { 
+@media (min-width: 600px ) and (max-width: 850px) { 
     .itemContent{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        gap: 45px;
         
     }
   

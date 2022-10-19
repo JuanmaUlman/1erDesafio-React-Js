@@ -5,32 +5,28 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import "./Item.css";
-// import ItemCount from '../Count/ItemCount'
 import { Link } from "react-router-dom";
 
-
 const MultiActionAreaCard = ({ img, title, description, price, id }) => {
-  //  const onAdd = (number) =>{
-  //         alert(`Agregaste ${number} productos`)
-  //       }
-
   return (
-    <Card 
-    className="cardItem"
-    sx={{maxWidth: 330}}
-    >
-      <CardActionArea 
-      sx={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-      }}>
-        
-        <CardMedia component="img" image={img} alt="img"  className="img"    sx={{maxWidth: 350,
-        height: '65vh',}}/>
+    <Card className="cardItem" >
+      <CardActionArea
+        sx={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <CardMedia
+          component="img"
+          image={img}
+          alt="img"
+          className="img"
+    
+        />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}
@@ -53,14 +49,7 @@ const MultiActionAreaCard = ({ img, title, description, price, id }) => {
           </Link>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        {/* <Button size="small" color="primary">
-          <ItemCount 
-            onAdd={onAdd}
-            initial={1}
-            stock={10}/>
-        </Button> */}
-      </CardActions>
+      <CardActions></CardActions>
     </Card>
   );
 };

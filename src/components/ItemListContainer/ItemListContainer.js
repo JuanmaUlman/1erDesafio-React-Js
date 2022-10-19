@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
-import './ItemListContainer.css'
+import "./ItemListContainer.css";
 
 //Firebase
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, getDocs } from "firebase/firestore";
 import { db } from "../../Firebase/FirebaseConfig";
 
 const ItemListContainer = (props) => {
-  const onAdd = (number) => {
-    alert(`Agregaste ${number} productos`);
-  };
-
   const [loading, setLoading] = useState(false);
 
   const [gamesList, setGamesList] = useState([]);
 
-const getGames = async () => {
+  const getGames = async () => {
     const q = query(collection(db, "games"));
     const docs = [];
     const querySnapshot = await getDocs(q);
@@ -28,33 +23,23 @@ const getGames = async () => {
       setGamesList(docs);
     });
   };
-  console.log(gamesList);
-
-  // const [productsList, setProductsList] = useState([]);
-
-  // const { categoryId } = useParams();
-
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     getGames();
 
     setTimeout(() => {
       setLoading(false);
-    },2000)
-
-
-    // setLoading(false)
-
+    }, 2000);
   }, []);
 
   return (
-    <div >
+    <div>
       {/* <h3>{props.saludo}</h3> */}
 
-    <div className="ListContainer">
-      {loading ? <Loader /> : <ItemList gamesList={gamesList} />}
-    </div>
+      <div className="ListContainer">
+        {loading ? <Loader /> : <ItemList gamesList={gamesList} />}
+      </div>
     </div>
   );
 };

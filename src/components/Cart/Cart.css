@@ -39,3 +39,22 @@
       transform: rotate(360deg);
     }
   }
+
+
+
+
+@media screen and (max-width: 600px) { 
+
+  .finalItems{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+h3{
+    font-size: 15px;
+  }
+}
+

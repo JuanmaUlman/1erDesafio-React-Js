@@ -17,6 +17,7 @@
     align-content: space-around;
     width: auto;
     height: auto;
+    max-width: 330px;
 }
 
 .cardItem:hover{
@@ -37,8 +38,8 @@
 
 .img {
     display: block;
-    max-width: 100%;
-    height: auto;
+    max-width: 350px;
+    height: 65vh;
   }
 
   @media screen and (max-width: 600px) { 
@@ -46,8 +47,60 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 15px;
-        
     }
 
+    .cardItem{
+
+        max-width: 280px;
+    }
+
+    .img {
+        display: block;
+        max-width: 280px;
+        height: 37vh;
+      }
+
     
+}
+  @media screen and (max-width: 400px) { 
+    .card{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .cardItem{
+
+        max-width: 200px;
+    }
+
+    .img {
+        display: block;
+        max-width: 200px;
+        height: 33vh;
+      }
+
+    
+}
+
+
+
+@media (min-width: 600px ) and (max-width: 850px) { 
+
+    .card{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .cardItem{
+
+        max-width: 250px;
+    }
+
+    .img {
+        display: block;
+        max-width: 250px;
+        height: 31vh;
+      }
 }
