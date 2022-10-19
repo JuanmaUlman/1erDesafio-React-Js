@@ -8,10 +8,7 @@ import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
 
 const ItemDetail = ({ games, item }) => {
-  console.log(games);
   const { addItem, items } = useContext(CartContext);
-
-  console.log(items);
 
   const onAdd = (quantity) => {
     addItem({ ...games, quantity }, quantity);

@@ -15,8 +15,6 @@ const Cart = () => {
   const { items, removeItem, clearItems, getTotal, totalProducts } =
     useContext(CartContext);
 
-  console.log(items);
-
   if (items.length === 0) {
     return (
       <div>
@@ -89,7 +87,7 @@ const Cart = () => {
         </Button>
         <Link to="shop" className="Link">
           <Button
-           className="btn-finalizar"
+            className="btn-finalizar"
             variant="contained"
             color="success"
             style={{ marginTop: "10px" }}

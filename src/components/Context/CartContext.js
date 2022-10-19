@@ -36,7 +36,6 @@ export const CartProvider = ({ children }) => {
             quantity: quantity,
           },
         ]);
-    console.log(items);
   };
 
   const removeItem = (title) => {

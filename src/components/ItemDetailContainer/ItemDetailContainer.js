@@ -34,7 +34,7 @@ const ItemDetailContainer = () => {
     }, 2000);
   }, [id]);
 
-  console.log(id);
+
 
   return <div>{loading ? <Loader /> : <ItemDetail games={games} />}</div>;
 };

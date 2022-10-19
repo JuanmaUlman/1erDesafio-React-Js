@@ -30,7 +30,7 @@ La App abre en el puerto [http://localhost:3000](http://localhost:3000) del nave
 ## Gif de un proceso de compra en el sitio web
  
 <p>
-<img src="./gif-readme/ProcesoDeCompra.gif" alt="ProcesoDeCompra">
+<img src="./assets/ProcesoDeCompra.gif" alt="ProcesoDeCompra">
 </p>
 
 

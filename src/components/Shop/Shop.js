@@ -28,7 +28,7 @@ const yupSchema = yup
       .string()
       .email("Debe ingresar un caracter valido, ejemplo test@test.com")
       .required("El campo es requerido"),
-      emailRepeat: yup
+    emailRepeat: yup
       .string()
       .oneOf([yup.ref("email"), null], "Los email no coinciden")
       .required("El campo es requerido"),
@@ -56,17 +56,15 @@ const Shop = () => {
   };
 
   const onSubmit = async (values, resetForm) => {
-    console.log(valuesOrder);
-
     // Add a new document with a generated id.
     const docRef = await addDoc(collection(db, "purchases"), {
       values,
     });
-    console.log("Document written with ID: ", docRef.id);
+    // console.log("Document written with ID: ", docRef.id);
     setPurchaseID(docRef.id);
     // SetValues(purchaseOrder);
     console.log(values);
-    resetForm();
+
   };
 
   return (
@@ -83,7 +81,6 @@ const Shop = () => {
               nombre: values.nombre,
               telefono: values.telefono,
               email: values.email,
-
             },
             items: items.map((game) => ({
               title: game.title,
@@ -151,7 +148,6 @@ const Shop = () => {
               onBlur={handleBlur}
             />
             {errors.emailRepeat && touched.emailRepeat && errors.emailRepeat}
-
 
             <Button
               variant="contained"
