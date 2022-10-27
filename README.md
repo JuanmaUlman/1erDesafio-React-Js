@@ -1,7 +1,7 @@
-# Proyecto E-Commerce : Curso React Js - CoderHouse
+# Proyecto E-Commerce : Curso React JS - CoderHouse
 
-## Alumno: Ulman Juan Manuel
-El proyecto es un E-Commerce de una tienda de videojuegos digitales, de el nombre ## Pixeles Digital Games.
+## Ulman Juan Manuel
+El proyecto es un E-Commerce de una tienda de videojuegos digitales, lleva consigo el nombre ## Pixeles Digital Games, el mismo fue creado como proyecto final del Curso de React JS de la carrera de FrontEnd Developer en la plataforma educativa CoderHouse.
 Cuenta con 23 juegos de diferentes consolas cargados en una base de datos de Firebase. En la tienda virtual, el navegante podra elegir el juego que guste, verlo en detalle, añadirlo al carrito, y luego de verificar que lo añadido a este es lo que desea, finalizar la compra llenando un formulario que devolvera un Id relacionadoa su pedido. 
 
 El proyecto fue creado con el CLI de React [Create React App](https://github.com/facebook/create-react-app).
@@ -35,4 +35,6 @@ La App abre en el puerto [http://localhost:3000](http://localhost:3000) del nave
 
 
 
+## Link al GitHub Pages
+ [Pixeles Digital Games](https://juanmaulman.github.io/Curso-React-Js/)
 

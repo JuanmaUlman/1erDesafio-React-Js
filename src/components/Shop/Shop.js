@@ -36,7 +36,7 @@ const yupSchema = yup
   .required();
 
 const Shop = () => {
-  const { getTotal, items } = useContext(CartContext);
+  const { getTotal, items, clearItems } = useContext(CartContext);
 
   const purchaseOrder = {
     items: items.map((game) => ({
@@ -151,6 +151,10 @@ const Shop = () => {
 
             <Button
               variant="contained"
+              onClick={() =>  setTimeout( () => {
+                clearItems()
+              }, 5000)
+              }
               type="submit"
               sx={{ width: "400px", height: "54px" }}
               disabled={!(isValid && dirty)}
