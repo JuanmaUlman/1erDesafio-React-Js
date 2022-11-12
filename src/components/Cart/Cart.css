@@ -1,3 +1,5 @@
+
+
 .cohete2{
     background-color: white;
     padding: 2px;
@@ -6,6 +8,7 @@
     width: 100px;
     background: transparent;
 }
+
 
 .noProducts{
   margin-top: 50px;
@@ -21,7 +24,12 @@
 .finalItems{
   display: flex;
   justify-content: space-around;
+  align-items: center;
+
   margin-top: 20px;
+  align-items: center;
+  border: 4px  double black;
+padding: 20PX;
 }
 
 
@@ -43,18 +51,30 @@
 
 
 
-@media screen and (max-width: 600px) { 
+@media all and (max-width: 600px) { 
 
-  .finalItems{
-    display: flex;
-    flex-direction: column;
+ .finalItems{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  align-items: flex-start;
+  gap: 0px;
+  border: 1px dashed black;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
   }
 
-h3{
-    font-size: 15px;
+  .btn-vaciar{
+    scale: 0.6;
+    
+  }
+
+  .btn-finalizar{
+    scale: 0.6;
+  }
+
+h3{    
+    font-size: 0.7em;
   }
 }
 

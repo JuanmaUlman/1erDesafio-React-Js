@@ -17,13 +17,19 @@
     align-content: space-around;
     width: auto;
     height: auto;
-    max-width: 330px;
+    /* max-width: 450px; */
+
 }
+
+
 
 .cardItem:hover{
     transform: scale(1.05);
     transition: 1s;
+    box-shadow: 3px 3px 7px rgb(10, 9, 9);
 }
+
+
 
 .cardContent{
     display: flex;
@@ -38,9 +44,14 @@
 
 .img {
     display: block;
-    max-width: 350px;
-    height: 65vh;
+    width: 100%;
+    max-width: 346px; 
+    height: 72vh;
+    padding: 18px;
+    
+    
   }
+  
 
   @media screen and (max-width: 600px) { 
     .card{
@@ -95,12 +106,13 @@
 
     .cardItem{
 
-        max-width: 250px;
+        max-width: 300px;
     }
 
     .img {
         display: block;
-        max-width: 250px;
-        height: 31vh;
+        width: 100%;
+        max-width: 350px;
+        height: 33vh;
       }
 }

@@ -81,7 +81,7 @@ const Cart = () => {
           }}
           variant="contained"
           color="error"
-          style={{ marginTop: "10px" }}
+          // style={{ marginTop: "10px" }}
         >
           Vaciar carrito
         </Button>
@@ -90,7 +90,7 @@ const Cart = () => {
             className="btn-finalizar"
             variant="contained"
             color="success"
-            style={{ marginTop: "10px" }}
+            // style={{ marginTop: "10px" }}
           >
             Finalizar Compra
           </Button>

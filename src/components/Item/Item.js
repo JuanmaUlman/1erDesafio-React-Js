@@ -18,6 +18,7 @@ const MultiActionAreaCard = ({ img, title, description, price, id }) => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "space-between",
+
         }}
       >
         <CardMedia
@@ -25,7 +26,6 @@ const MultiActionAreaCard = ({ img, title, description, price, id }) => {
           image={img}
           alt="img"
           className="img"
-    
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

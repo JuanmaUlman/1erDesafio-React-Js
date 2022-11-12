@@ -35,11 +35,12 @@ const NavBar = (props) => {
           aria-controls="navbarNavAltMarkup"
           aria-expanded="false"
           aria-label="Toggle navigation"
+
         >
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="collapse navbar-collapse d-flex justify-content-end"
+          className="collapse navbar-collapse d-flex justify-content-end "
           id="navbarNavAltMarkup"
         >
           <div className="navbar-nav">
@@ -69,7 +70,7 @@ const NavBar = (props) => {
             </Link>
             <Link
               to="/category/ps4"
-              className="nav-link boton2 btn btn-light text-end active mx-1"
+              className="nav-link boton2 btn btn-light text-end mx-1"
             >
               PS4
             </Link>
