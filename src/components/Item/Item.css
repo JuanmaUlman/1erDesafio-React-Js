@@ -17,7 +17,7 @@
     align-content: space-around;
     width: auto;
     height: auto;
-    /* max-width: 450px; */
+    max-width: 350px;
 
 }
 
@@ -25,8 +25,9 @@
 
 .cardItem:hover{
     transform: scale(1.05);
-    transition: 1s;
-    box-shadow: 3px 3px 7px rgb(10, 9, 9);
+    transition: 1s ;
+    box-shadow: 3px 3px 40px rgb(187, 9, 151);
+    background-color: rgb(145, 249, 249);
 }
 
 
@@ -47,7 +48,7 @@
     width: 100%;
     max-width: 346px; 
     height: 72vh;
-    padding: 18px;
+    padding: 11px;
     
     
   }
