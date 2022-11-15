@@ -8,7 +8,7 @@ const NavBar = (props) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between ">
       <div className="container-fluid navBar">
-        <Link to="//Curso-React-Js">
+        <Link to="/Curso-React-Js">
           <img src={cohete} className="cohete bg-light" alt="cohete" />
         </Link>
         <h2
@@ -45,7 +45,7 @@ const NavBar = (props) => {
         >
           <div className="navbar-nav">
             <Link
-              to="//Curso-React-Js"
+              to="/Curso-React-Js"
               className="nav-link boton2 btn btn-light text-end mx-1"
               aria-current="page"
             >
