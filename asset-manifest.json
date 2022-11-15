@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Curso-React-Js/static/css/main.c89e905b.css",
-    "main.js": "/Curso-React-Js/static/js/main.b458a76b.js",
+    "main.js": "/Curso-React-Js/static/js/main.77d161a5.js",
     "static/media/cohete.png": "/Curso-React-Js/static/media/cohete.fa25d047758da2e4e952.png",
     "index.html": "/Curso-React-Js/index.html",
     "main.c89e905b.css.map": "/Curso-React-Js/static/css/main.c89e905b.css.map",
-    "main.b458a76b.js.map": "/Curso-React-Js/static/js/main.b458a76b.js.map"
+    "main.77d161a5.js.map": "/Curso-React-Js/static/js/main.77d161a5.js.map"
   },
   "entrypoints": [
     "static/css/main.c89e905b.css",
-    "static/js/main.b458a76b.js"
+    "static/js/main.77d161a5.js"
   ]
 }
