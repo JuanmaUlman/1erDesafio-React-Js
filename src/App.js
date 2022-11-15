@@ -22,7 +22,7 @@ const App = () => {
 
           <Routes>
             <Route
-              path="/"
+              path="/Curso-React-Js"
               element={
                 <ItemListContainer saludo="Selecciona tu juego favorito, y subi al siguiente nivel!!" />
               }

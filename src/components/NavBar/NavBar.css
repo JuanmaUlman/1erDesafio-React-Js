@@ -21,6 +21,7 @@
     width: 30px;
 }
 
+
 @media (max-width: 600px) {
   h2{
     font-size: 12px;
@@ -36,6 +37,10 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+    .cohete {
+      animation: cohete-logo-spin infinite 9s linear;
+    }
+
     .cohete:hover {
       animation: cohete-logo-spin infinite 1s linear;
     }
